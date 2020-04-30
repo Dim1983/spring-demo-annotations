@@ -1,11 +1,17 @@
 package com.luv2code.springdemo;
 
 public class HappyFortuneService implements FortuneService {
+    private String[] fortuneArray;
+
+    public void setFortuneArray(String[] fortuneArray) {
+	this.fortuneArray = fortuneArray;
+    }
 
     @Override
     public String getFortune() {
-	// TODO Auto-generated method stub
-	return "Today is your lucky day!";
+	
+	int i = (int) (Math.random() * 10);
+	return fortuneArray[i];
     }
 
 }
